@@ -1,24 +1,9 @@
-var deleteBear = function(){
-	var id = $(event.target).closest('tr').attr('id');
-	var bear = $(event.target).closest('tr');
-	
-	if (confirm("Are you sure you want to make this bear hibernate?")) {	
-	$.ajax({//method that allows us to comm with our database aka =postman
 
-		url: '/api/bears/' + id,
-		method: 'DELETE',
-	}).done(function(){
-		bear.remove();
-	})
-}
-}
-
-var addBear = function(event){
+var addPost = function(event){
 	event.preventDefault();
 	var name = $('#name').val();
-	var age = $('#age').val();
-	var gender = $('#gender').val();
-	var $table = $('#bearTable');
+	var name = $('#name').val();
+	var $table = $('#blofTable');
 	var bear = {};
 		bear.name = name;
 		bear.age = age;
@@ -45,7 +30,4 @@ var addBear = function(event){
 	$('#age').val("");
 	$('#gender').val("");
 }
-
-$("#addBear").on("click", addBear);
-
-//public side browser, not node, using jquery and html
+$('.deleteBear').on('click', deleteBear);
