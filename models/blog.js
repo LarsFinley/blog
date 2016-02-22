@@ -1,7 +1,6 @@
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
+var Schema       = Mongoose.Schema;
 
-var BlogSchema = new BlogSchema({//necessary to make bears in our database
+var BlogSchema = new Schema({
 	name: {
 		type : String,
 	 	required: true,	
@@ -10,10 +9,6 @@ var BlogSchema = new BlogSchema({//necessary to make bears in our database
 		type: String,
 		required: true,
 	} 
-	userAlias: {
-		type: String,
-		required: true,
-	}
 });
 
-module.exports = mongoose.model('Blog', BlogSchema);
+module.exports = Mongoose.model('Blog', BlogSchema);

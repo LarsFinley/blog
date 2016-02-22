@@ -1,22 +1,34 @@
-var express    = require('express');        
-var app        = express();                 
+Express = require('express');
+Mongoose = require('mongoose');
+Blog = require('./models/blog.js')
+ExpressApp = Express();
+Router = Express.Router(); 
+
 var bodyParser = require('body-parser');
-var mongoose   = require('mongoose');
+ExpressApp.use(bodyParser.urlencoded({ extended: true }));
+ExpressApp.use(bodyParser.json());
+ExpressApp.use(Express.static('public'));
+ExpressApp.set('view engine', 'ejs');
+ExpressApp.use('/api', Router);
+ExpressApp.listen(process.env.PORT || 8000);
+	
+console.log('Magical things happens on port ' + (process.env.PORT || 8000));
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+Mongoose.connect('mongodb://localhost/blog');
 
-var router = express.Router();
-
-router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+ExpressApp.get('/', function(req, res){//homepage server file
+	res.render('index',{title:"hello world"})
 });
 
-app.use('/api', router);
+ExpressApp.get('/blog', function(req, res){
+	Blog.find(function(err, blog){
+		if(err){
+			console.log(err);
+		} else {
+			res.render('blog', {blog:blog})		
+		}
+	})
+	
+});
 
-var port = process.env.PORT || (8000);        
-
-var router = express.Router();              
-
-app.listen(port);
-console.log('Magical things happens on port ' + port);
+require('./routes/blog');

@@ -1,33 +1,29 @@
-
-var addPost = function(event){
+var addBlog = function(event){
+	console.log('added something');
 	event.preventDefault();
 	var name = $('#name').val();
-	var name = $('#name').val();
-	var $table = $('#blofTable');
-	var bear = {};
-		bear.name = name;
-		bear.age = age;
-		bear.gender = gender;
-	
-	$.ajax({
-		url: '/api/bears',
-		method: "POST",
-		data: bear,
-	}).done(function(data){
-		console.log("worked", data);
+	var comment = $('#comment').val();
+	var $table = $('#blogTable');
+	var blog = {};
+		blog.name = name;
+		blog.comment = comment;
+		
+		$.ajax({
+			url: '/api/blog',
+			method: "POST",
+			data: blog,
+		}).done(function(data){
+			console.log("worked", data);
 
-		$table.append('<tr id=' + data._id + '>\
-                   <td>' + data.name + '</td>\
-                   <td>' + data.age + '</td>\
-                   <td>' + data.gender + '</td>\
-                   <td><button class="btn btn-danger deleteBear">Hibernate Bear</button></td>\
-                 </tr>'
-               );
-			
-			$('.deleteBear').on('click', deleteBear);
-	})
-	$('#name').val("");
-	$('#age').val("");
-	$('#gender').val("");
-}
-$('.deleteBear').on('click', deleteBear);
+			$table.append('<tr id=' + data._id + '>\
+				<td>' + data.name + '</td>\
+				<td>' + data.comment + '</td>\
+				</tr>'
+				);
+
+		})
+		$('#name').val("");
+		$('#comment').val("");
+
+	}
+	$("#publish").on("click", addBlog);

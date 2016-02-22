@@ -1,1 +1,15 @@
-	
+body{
+	padding-top: 70px;
+};
+.pano{
+	text-align: center;
+};
+
+.cstm-img {
+	max-width:100%;
+	max-height:100%;
+};
+.img1 {
+	width:100px;
+	height: 250px;
+}
