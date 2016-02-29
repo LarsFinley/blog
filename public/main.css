@@ -18,11 +18,16 @@ body{
 }
 .p {
 	margin: 10px 20px 10px 20px;
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
 }
 .a {
-	margin: 30px 20px 10px 20px;
+	margin: 30px 10px 10px 10px;
 	font-family: 'Vollkorn', serif;
-	font-size: 30px
+  font-size: 18px;
+  border-width: 2px;
+  border-color: black;
+
 }
 h1{
 	font-size: 40px;
@@ -34,20 +39,32 @@ h1, h2{
 }
 div.feedbox{
   height: 750px;
-  padding: 19px;
-  margin: 15px 0;
+  padding: 10px;
+  margin: 10px 0;
   background-color: rgba(255, 255, 255, .7);
   border: none;
   border-radius: 4px;
-  box-shadow: none;
+  box-shadow: light-grey;
   overflow: hidden;
 }
 .thumbnail:hover {
     position:relative;
     top:-25px;
     left:-35px;
-    width:300px;
+    width:400px;
     height:auto;
     display:block;
     z-index:999;
 }
+.thumbnail{
+   margin-left: 90px;
+}
+.features {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.spread {
+  padding: 40px;
+  margin-right: 40px;
+}
+
