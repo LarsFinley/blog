@@ -3,11 +3,30 @@ Mongoose = require('mongoose');
 Blog = require('./models/blog.js')
 ExpressApp = Express();
 Router = Express.Router(); 
+Passport = require('passport');
+var session = require('express-session');
+Flash = require('connect-flash');
 
 var bodyParser = require('body-parser');
 ExpressApp.use(bodyParser.urlencoded({ extended: true }));
 ExpressApp.use(bodyParser.json());
 ExpressApp.use(Express.static('public'));
+ExpressApp.use(session({secret: 'ilovescotchscotchyscotchscotch'
+}));
+ExpressApp.use(Passport.initialize());
+ExpressApp.use(Passport.session());
+ExpressApp.use(session({
+ cookie: {
+   maxAge: 60000
+ }
+}));
+ExpressApp.use(Flash());
+
+ExpressApp.use(function(req, res, next) {
+	var user = req.user || "no user";
+	console.log(user);
+	next();
+});
 ExpressApp.set('view engine', 'ejs');
 ExpressApp.use('/api', Router);
 ExpressApp.listen(process.env.PORT || 8000);
@@ -30,5 +49,11 @@ ExpressApp.get('/blog', function(req, res){
 	})
 	
 });
+
+
+
+require('./config/Passport')(Passport);
+// routes ======================================================================
+require('./routes/user.js')(ExpressApp, Passport);
 
 require('./routes/blog');
