@@ -36,7 +36,8 @@ console.log('Magical things happens on port ' + (process.env.PORT || 8000));
 Mongoose.connect('mongodb://localhost/blog');
 
 ExpressApp.get('/', function(req, res){//homepage server file
-	res.render('index',{title:"hello world"})
+	var user = req.user || "no user"
+	res.render('index',{user: user})
 });
 
 ExpressApp.get('/blog', function(req, res){
