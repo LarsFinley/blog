@@ -12,22 +12,28 @@ body, html, main {
 }
  
 .cd-fixed-bg.cd-bg-1 {
-  max-width:100%;
-  max-height:100%;
-  background-image: url("http://40.media.tumblr.com/3c8cec7864cb8a5bfecd5bd4d640087a/tumblr_nfmhl19Tv81tsc3aio2_1280.jpg");
+  background-image: url("http://56.media.tumblr.com/ca6dd898536b57c328e24ab58af46362/tumblr_ni095newOQ1tsc3aio4_1280.jpg");
 }
-/*.cd-fixed-bg.cd-bg-2 {
-  background-image: url("../img/cd-background-2.jpg");
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("http://40.media.tumblr.com/b7e65fa3192cbd2e5ec9d29e2c94b6c9/tumblr_nitfrev5lz1tsc3aio8_1280.jpg");
 }
 .cd-fixed-bg.cd-bg-3 {
-  background-image: url("../img/cd-background-3.jpg");
+  background-image: url("http://2.bp.blogspot.com/-sJat_v4ia70/TWLHGGHhJwI/AAAAAAAABaI/p5JF0RPK-gQ/s1600/DSCF2497.JPG");
 }
-.cd-fixed-bg.cd-bg-4 {
-  background-image: url("../img/cd-background-4.jpg");
-}*/
- 
+.myJumbotron {
+  background: url('bw2.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   color:#fff;
+   max-width:100%;
+  max-height:100%;
+   font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
+
 .cd-scrolling-bg {
-  min-height: 100%;
+  min-height: 120px;
 }
 body{
 	padding-top: 70px;
@@ -35,7 +41,10 @@ body{
 .pano{
 	text-align: center;
 }
-
+/*.hi {
+  border: solid 3px black;
+}
+*/
 .cstm-img {
 	max-width:100%;
 	max-height:100%;
@@ -49,6 +58,10 @@ body{
 }
 .p {
 	margin: 10px 20px 10px 20px;
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
+}
+li, h3{
   font-family: 'Vollkorn', serif;
   font-size: 20px;
 }
@@ -98,4 +111,6 @@ div.feedbox{
   padding: 40px;
   margin-right: 40px;
 }
-
+.backgroundColor {
+  background-color: white;
+}

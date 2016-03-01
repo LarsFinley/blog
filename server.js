@@ -45,7 +45,7 @@ ExpressApp.get('/blog', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render('blog', {blog:blog})		
+			res.render('blog', {blog:blog, user: 'user'})		
 		}
 	})
 	

@@ -3,7 +3,7 @@
 <%-include ./partials/navbar.ejs %>
 
 <div class="jumbotron">
-	<div class="container">
+
 		<h1>Lars' Blog</h1>
 			<% for(var i = 0; i < blog.length; i ++) {%>
 				<div class="panel panel-default"id="<%= blog[i]._id %>">
@@ -15,7 +15,7 @@
 				<% }; %>
 			</tbody>>
 		</table>
-	</div>
+	
 </div>	
 <div class="lars">
 	<div class="container-fluid">							

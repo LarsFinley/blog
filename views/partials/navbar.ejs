@@ -1,4 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-custom ">
+	<div class="backgroundColor">   
+        <div class="row">
         <div class="container-fluid" id="top">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -11,6 +13,8 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+            
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 					 <% if(user.local) { %>
@@ -18,14 +22,20 @@
 					<% } else { %>
 					<%= user %>
 					<% } %>
-						<li><a href="/blog"		><h3>Blog</h3></a></li>
-						<li><a href="#who"		><h3>Who I Am</h3></a></li>
-						<li><a href="#travels"	><h3>Travels</h3></a></li>
-						<li><a href="#contact"	><h3>Contact</h3></a></li>
-						<li><a href="/logout"	><h3>Logout</h3></a></li>
-						<li><a href="/login"	><h3>Login</h3></a></li>
-
+						<li><a data-scroll href="#who"><h3>Who I Am</h3></a></li>
+						<li><a data-scroll href="#travels"><h3>Travels</h3></a></li>
+						<li><a data-scroll href="#contact"><h3>Contact</h3></a></li>
 				</ul>
 			</div>
+			<div class="dropdown">
+  				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Blog<span class="caret"></span></button>
+  				<ul class="dropdown-menu">
+				    <li><a href="/blog"><h3>Blog</h3></a></li>
+					<li><a href="/login"><h3>Login</h3></a></li>
+				    <li><a href="/logout"><h3>Logout</h3></a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
 		</div>
 	</nav>
